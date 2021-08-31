@@ -1,0 +1,44 @@
+body {
+    background-color: #6db0ca;
+}
+
+p {
+    margin: 10px 0 !important
+}
+
+.login-container {
+    width: 400px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.fa-small {
+    font-size: 16px !important
+}
+
+.btn-float {
+    float: left;
+    margin-right: 10px;
+}
+
+.img-small {
+    width: 180px;
+}
+
+#map{
+    height:700px;
+    width:100%;
+  }
+  #description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+
+@media (max-width: 700px){
+  #map{
+    height:400px;
+    width:100%;
+  }
+}

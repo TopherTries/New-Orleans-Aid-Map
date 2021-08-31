@@ -1,0 +1,43 @@
+{
+  "name": "new_orleans_aid_map",
+  "version": "1.0.0",
+  "description": "Map to track emergency resources.",
+  "main": "main.js",
+  "dependencies": {
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-flash": "^0.0.2",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.1",
+    "i": "^0.3.6",
+    "mapbox": "^1.0.0-beta10",
+    "mapbox-gl": "^2.3.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.13.8",
+    "morgan": "^1.10.0",
+    "node-geocoder": "^3.27.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "cross-env NODE_ENV=development nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TopherTries/PopUpApiMap.git"
+  },
+  "author": "Topher Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TopherTries/PopUpApiMap/issues"
+  },
+  "homepage": "https://github.com/TopherTries/PopUpApiMap#readme"
+}

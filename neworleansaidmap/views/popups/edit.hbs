@@ -1,0 +1,48 @@
+<h3>Edit Popup</h3>
+<div class="row">
+    <form action="/popups/{{popup._id}}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="title" name="title" value="{{popup.title}}">
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select id="status" name="status">
+                    {{#select popup.status}}
+                    <option value="public" selected>Public</option>
+                    <option value="private">Private</option>
+                    {{/select}}
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <h5>What's your story?</h5>
+                <textarea id="body" name="body">{{popup.body}}</textarea>
+            </div>
+            <div class="input-field">
+                <h5>What's on the menu?</h5>
+                <textarea id="menu" name="menu">{{popup.menu}}</textarea>
+            </div>
+            <div class="input-field">
+                <h5>When are you popping up?</h5>
+                <textarea id="hours" name="hours">{{popup.hours}}</textarea>
+            </div>
+            <div class="input-field">
+                <h5>Where are you popping up?</h5>
+                <textarea id="address" name="address">{{popup.address}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
