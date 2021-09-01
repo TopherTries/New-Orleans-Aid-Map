@@ -1,0 +1,46 @@
+<h3>Edit Popup</h3>
+<div class="row">
+    <form action="/popups/{{popup._id}}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="title" name="title" value="{{popup.title}}">
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select id="status" name="status">
+                    {{#select popup.status}}
+                    <option value="public" selected>Public</option>
+                    <option value="private">Private</option>
+                    {{/select}}
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <h5>What kind of resources are available? (ex.: food, charging station, gas, etc.)</h5>
+                <textarea id="body" name="body"></textarea>
+            </div>
+            <div class="input-field">
+                <h5>When are these resources available? (Please be as detailed as possible, ex.: Thursday Sept 2 from 3pm-6pm. Take it upon yourself to delete your post when things run out!)</h5>
+                <textarea id="hours" name="hours"></textarea>
+                {{!-- <input type="text" id="datepicker" class="datepicker">
+                <input type="text" id="timepicker" class="timepicker"> --}}
+            </div>
+            <div class="input-field">
+                <h5>Where are the resources located? This will create an icon on the map. (Address ex.: 1300 perdido street new orleans la 70112) </h5>
+                <textarea id="address" name="address">{{popup.address}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

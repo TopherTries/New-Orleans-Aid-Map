@@ -1,0 +1,115 @@
+<head>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.js"></script>
+</head>
+<h6>Resource Map</h6>
+<h3>Welcome {{name}}</h3>
+ <title>My Map</title>
+
+{{#if popups}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each popups}}
+                <tr>
+                    <td><a href="/popups/{{_id}}">{{title}}</a></td>
+                    <td><a href="/popups/{{_id}}">{{hours}}</a></td>
+                    <td><a href="/popups/{{_id}}">{{location.formattedAddress}}</a></td>
+                    <td>
+                        <a href="/popups/edit/{{_id}}" class="btn btn-float">
+                            <i class="fas fa-edit"></i>
+                        </a>
+
+                        <form action="/popups/{{_id}}" method="POST" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn red">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>You have not created any posts.</p>
+{{/if}}
+
+<body>
+
+  <div id='map'></div>
+  
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidG9waGVydHJpZXMiLCJhIjoiY2t0MHVvOHlkMDhudDJ2cDk5NnBpeGI1eiJ9.nCn4ubl8zjkKyqlpU6ZXyQ';
+    const map = new mapboxgl.Map({
+    container: 'map',
+    center: [-90.071533, 29.951065],
+    zoom: 9,
+    style: 'mapbox://styles/mapbox/streets-v11',
+    })
+
+    // Fetch popups from API
+    async function getPopups(){
+    const res = await fetch('/api/v1/popups')
+    const data = await res.json()
+
+    const popups = data.data.map(popup => {
+      return {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [
+            popup.location.coordinates[0], 
+            popup.location.coordinates[1]
+            ]
+        },
+        properties: {
+          name: popup.title,
+          icon: 'heart'
+        }
+      }
+    })
+
+    loadMap(popups)
+  }
+
+    // Load map with points
+    function loadMap(popups) {
+      map.on('load', function () { 
+      map.addLayer({
+      id: 'points',
+      type: 'symbol',
+      source: {
+        type: 'geojson',
+        data: {
+        type: 'FeatureCollection',
+        features: popups
+        }
+      },
+      layout: {
+      'icon-image': '{icon}-15',
+      'icon-size': 1.15,
+      'icon-allow-overlap': true,
+      'text-field': '{name}',
+      'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+      'text-offset': [0, 0.6],
+      'text-anchor': 'top',
+      'text-size': 12,
+      'text-allow-overlap': true,
+            }
+          })
+      })
+    }
+
+    getPopups()
+  </script>
+  
+</body>
+
