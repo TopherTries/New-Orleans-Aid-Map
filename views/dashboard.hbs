@@ -76,7 +76,11 @@
         },
         properties: {
           name: popup.title,
-          description: popup.body,
+          description: [
+          popup.body,
+          popup.hours,
+          popup.location.formattedAddress
+          ],
           icon: 'shop'
         }
       }
