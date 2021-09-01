@@ -3,11 +3,8 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.js"></script>
 </head>
-<h6>Resource Map</h6>
-<h3>Welcome {{name}}</h3>
- <title>My Map</title>
 
-{{#if popups}}
+{{!-- {{#if popups}}
     <table class="striped">
         <thead>
             <tr>
@@ -40,12 +37,12 @@
     </table>
 {{else}}
     <p>You have not created any posts.</p>
-{{/if}}
+{{/if}} --}}
 
-<body>
-
+<body> 
+  <div id="map-container">
   <div id='map'></div>
-  
+  </div>
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoidG9waGVydHJpZXMiLCJhIjoiY2t0MHVvOHlkMDhudDJ2cDk5NnBpeGI1eiJ9.nCn4ubl8zjkKyqlpU6ZXyQ';
     const map = new mapboxgl.Map({
@@ -148,6 +145,7 @@
     }
 
     getPopups()
+
   </script>
   
 </body>

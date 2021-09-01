@@ -12,6 +12,7 @@
     "express-handlebars": "^5.3.3",
     "express-session": "^1.17.1",
     "i": "^0.3.6",
+    "jquery": "^3.6.0",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.3.1",
     "method-override": "^3.0.0",
@@ -20,7 +21,8 @@
     "morgan": "^1.10.0",
     "node-geocoder": "^3.27.0",
     "passport": "^0.4.1",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "underscore": "^1.13.1"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
