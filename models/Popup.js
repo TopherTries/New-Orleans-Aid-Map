@@ -12,10 +12,6 @@ const PopupSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    menu: {
-        type: String,
-        required: false
-    },
     hours: {
         type: String,
         required: true
