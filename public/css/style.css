@@ -1,73 +1,89 @@
+:root {
+  /* CSS HEX */
+  --vermilion: #d52c11ff;
+  --orange-yellow: #edb31fff;
+  --oxford-blue: #111c4cff;
+  --dim-gray: #656256ff;
+  --cultured: #f4f2f3ff;
+
+  /* CSS HSL */
+  --vermilion: hsla(8, 85%, 45%, 1);
+  --orange-yellow: hsla(43, 85%, 53%, 1);
+  --oxford-blue: hsla(229, 63%, 18%, 1);
+  --dim-gray: hsla(48, 8%, 37%, 1);
+  --cultured: hsla(330, 8%, 95%, 1);
+}
+
 body {
-    background-color: #6db0ca;
+  background-color: var(--cultured);
 }
 
 p {
-    margin: 10px 0 !important
+  margin: 10px 0 !important;
 }
 
 .login-container {
-    width: 400px;
-    margin-top: 50px;
-    text-align: center;
+  width: 400px;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .fa-small {
-    font-size: 16px !important
+  font-size: 16px !important;
 }
 
 .btn-float {
-    float: left;
-    margin-right: 10px;
+  float: left;
+  margin-right: 10px;
 }
 
 .img-small {
-    width: 180px;
+  width: 180px;
 }
 
-#map{
-    position:relative;
-    height:100%;
-    width:100%;
-  }
+#map {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
 
 #map-container {
-    height: 100vh;
-    width: 100vw;
+  height: calc(100vh - 64px);
+  width: 100vw;
 }
 
 #description {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-  }
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
 
 #add {
   margin: 15px 15px;
 }
 
-#index{
+#index {
   margin: 15px 15px;
 }
 
+.container {
+  margin: 0;
+  width: 100%;
+}
+@media only screen and (min-width: 601px) {
   .container {
-    margin: 0;
     width: 100%;
   }
-  @media only screen and (min-width: 601px) {
-    .container {
-      width: 100%;
-    }
+}
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 100%;
   }
-  @media only screen and (min-width: 993px) {
-    .container {
-      width: 100%;
-    }
-  }
+}
 
-@media (max-width: 700px){
-  #map{
-    height:100%;
-    width:100%;
+@media (max-width: 700px) {
+  #map {
+    height: 100%;
+    width: 100%;
   }
 }
