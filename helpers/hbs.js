@@ -18,7 +18,7 @@ module.exports = {
     return input.replace(/<(?:.|\n)*?>/gm, '')
   },
   editIcon: function (popupUser, loggedUser, popupId, floating = true) {
-    if (popupUser._id.toString() == loggedUser._id.toString()) {
+    if (loggedUser && loggedUser._id.toString() == popupUser._id.toString()) {
       if (floating) {
         return `<a href="/popups/edit/${popupId}" class="btn-floating halfway-fab blue"><i class="fas fa-edit fa-small"></i></a>`
       } else {
