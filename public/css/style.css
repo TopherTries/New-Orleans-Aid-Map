@@ -6,12 +6,6 @@ p {
     margin: 10px 0 !important
 }
 
-.login-container {
-    width: 400px;
-    margin-top: 50px;
-    text-align: center;
-}
-
 .fa-small {
     font-size: 16px !important
 }
@@ -50,10 +44,10 @@ p {
   margin: 15px 15px;
 }
 
-  .container {
-    margin: 0;
-    width: 100%;
-  }
+.container {
+  margin: 0;
+  width: 100%;
+}
   @media only screen and (min-width: 601px) {
     .container {
       width: 100%;
@@ -64,6 +58,13 @@ p {
       width: 100%;
     }
   }
+
+  .login-container {
+    width: 400px;
+    margin-top: 50px;
+    text-align: center;
+    margin: auto;
+}
 
 @media (max-width: 700px){
   #map{
