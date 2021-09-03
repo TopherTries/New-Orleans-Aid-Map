@@ -22,13 +22,13 @@ p {
   margin: 10px 0 !important;
 }
 
-.login-container {
+<<<<<<< HEAD .login-container {
   width: 400px;
   margin-top: 50px;
   text-align: center;
 }
 
-.fa-small {
+=======>>>>>>>upstream/main .fa-small {
   font-size: 16px !important;
 }
 
@@ -79,6 +79,13 @@ p {
   .container {
     width: 100%;
   }
+}
+
+.login-container {
+  width: 400px;
+  margin-top: 50px;
+  text-align: center;
+  margin: auto;
 }
 
 @media (max-width: 700px) {
