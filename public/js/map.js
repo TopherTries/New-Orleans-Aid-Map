@@ -30,10 +30,11 @@ function map() {
         properties: {
           name: popup.title,
           description: [
-            popup.body,
-            popup.hours,
-            popup.location.formattedAddress,
-          ],
+              popup.title,
+              popup.body,
+              popup.hours,
+              popup.location.formattedAddress
+            ],
           icon: 'hospital',
         },
       }
@@ -86,7 +87,7 @@ function map() {
 
         new mapboxgl.Popup()
           .setLngLat(coordinates)
-          .setHTML(description)
+          .setHTML('<p>'+description+'</p>')
           .addTo(map)
       })
 
