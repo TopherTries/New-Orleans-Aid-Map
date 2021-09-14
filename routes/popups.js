@@ -119,7 +119,7 @@ router.put('/:id', ensureAuth, async (req, res) => {
 router.delete('/:id', ensureAuth, async (req, res) => {
   try {
     await Popup.remove({ _id: req.params.id })
-    res.redirect('/dashboard')
+    res.redirect('/popups')
   } catch (error) {
     console.error(err)
     return res.render('error/500')
