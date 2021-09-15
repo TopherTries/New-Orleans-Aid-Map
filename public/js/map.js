@@ -87,7 +87,7 @@ function map() {
 
         new mapboxgl.Popup()
           .setLngLat(coordinates)
-          .setHTML('<p>'+description+'</p>')
+          .setHTML('<p>' + description + '</p>')
           .addTo(map)
       })
 
