@@ -82,7 +82,7 @@ function map() {
 
         new mapboxgl.Popup()
           .setLngLat(coordinates)
-          .setHTML('<p><a href="http://new-orleans-resource-map.herokuapp.com/popups/show"' + description + '</a></p>')
+          .setHTML('<p><a href="http://new-orleans-resource-map.herokuapp.com/popups/"' + description + '</a></p>')
           .addTo(map)
       })
 
