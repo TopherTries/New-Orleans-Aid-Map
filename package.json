@@ -8,16 +8,16 @@
     "cors": "^2.8.5",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
-    "express-flash": "^0.0.2",
-    "express-handlebars": "^5.3.3",
-    "express-session": "^1.17.1",
-    "i": "^0.3.6",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "i": "^0.3.7",
     "jquery": "^3.6.0",
     "mapbox": "^1.0.0-beta10",
-    "mapbox-gl": "^2.3.1",
+    "mapbox-gl": "^2.4.1",
     "method-override": "^3.0.0",
     "moment": "^2.29.1",
-    "mongoose": "^5.13.8",
+    "mongoose": "^5.13.9",
     "morgan": "^1.10.0",
     "node-geocoder": "^3.27.0",
     "passport": "^0.4.1",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.13"
   },
   "scripts": {
     "start": "node app.js",

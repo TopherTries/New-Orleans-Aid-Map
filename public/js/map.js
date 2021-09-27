@@ -29,12 +29,7 @@ function map() {
         },
         properties: {
           name: popup.title,
-          description: [
-              popup.title,
-              popup.body,
-              popup.hours,
-              popup.location.formattedAddress
-            ],
+          description: popup.body,
           icon: 'hospital',
         },
       }
@@ -87,7 +82,7 @@ function map() {
 
         new mapboxgl.Popup()
           .setLngLat(coordinates)
-          .setHTML('<p>' + description + '</p>')
+          .setHTML('<p><a href="http://new-orleans-resource-map.herokuapp.com/popups/show"' + description + '</a></p>')
           .addTo(map)
       })
 
